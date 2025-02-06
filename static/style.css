@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #6a2c9b;  /* Purple */
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: #e8e0f7; /* Light Purple */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+}
+
+form {
+    margin-top: 10px;
+}
+
+input[type="number"] {
+    padding: 5px;
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #6a2c9b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #5c2394; /* Darker Purple */
+}
