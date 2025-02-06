@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bid Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="confirmation-container">
+        <h1>Thank you for your bid!</h1>
+        <h2>Your bid has been successfully placed.</h2>
+        
+        <p>Item: <strong id="confirmation-item"></strong></p>
+        <p>Bidder Name: <strong id="confirmation-name"></strong></p>
+        <p>Bid Amount: <strong id="confirmation-bid"></strong></p>
+        
+        <button onclick="goBack()">Go Back to Auction</button>
+    </div>
+
+    <script>
+        // Example data for confirmation page (you'd pass this from the form)
+        const urlParams = new URLSearchParams(window.location.search);
+        const item = urlParams.get('item');
+        const name = urlParams.get('name');
+        const bidAmount = urlParams.get('bid');
+
+        // Populate confirmation page with dynamic data
+        document.getElementById('confirmation-item').innerText = item;
+        document.getElementById('confirmation-name').innerText = name;
+        document.getElementById('confirmation-bid').innerText = '$' + bidAmount;
+
+        // Go back to the auction home page
+        function goBack() {
+            window.location.href = "index.html";  // Change to your home page URL
+        }
+    </script>
+</body>
+</html>
