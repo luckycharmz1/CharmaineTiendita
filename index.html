@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charmaine's Tiendita<title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="auction-container">
+        <h1>Welcome to the Auction!</h1>
+        <h2>¡Bienvenidos a la Subasta!</h2>
+        <div id="product-listing">
+            <div class="product">
+                <h2>Item 1: Television</h2>
+                <p>Description: An element tv with a Amazon HDMI. </p>
+                <p id="current-bid">Current Bid: $<span>0</span></p>
+                <div id="timer">
+                    <span id="countdown"></span>
+                </div>
+                <input type="number" id="bid-amount" placeholder="Enter your bid">
+                <button onclick="placeBid()">Place Bid</button>
+            </div>
+           <div id="product-listing">
+            <div class="product">
+                <h2>Item 1: Ipad</h2>
+                <p>Description: An Apple Ipad. </p>
+                <p id="current-bid">Current Bid: $<span>1000</span></p>
+                <div id="timer">
+                    <span id="countdown"></span>
+                </div>
+                <input type="number" id="bid-amount" placeholder="Enter your bid">
+                <button onclick="placeBid()">Place Bid</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
