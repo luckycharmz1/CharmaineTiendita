@@ -134,3 +134,11 @@ button:active {
 #auction-container {
     animation: pulse 2s infinite;
 }
+
+.product img {
+    width: 100%;               /* Set width to 100% of its container */
+    height: auto;              /* Keep the height proportional to the width */
+    max-width: 300px;          /* Limit the width to a maximum of 300px */
+    margin-bottom: 10px;       /* Add space below the image */
+    border-radius: 8px;        /* Keep the rounded corners */
+}
