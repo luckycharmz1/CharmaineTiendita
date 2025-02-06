@@ -10,32 +10,67 @@
     <div id="auction-container">
         <h1>Welcome to the Auction!</h1>
         <h2>¡Bienvenidos a la Subasta!</h2>
+
+        <h3>Thank you for visiting my website. I coded it from scratch. All bids are placed in Peso format. Have fun!<br>
+            Gracias por visitar mi sitio web. Lo codifiqué desde cero. Todas las ofertas se realizan en formato Peso. ¡Diviértete!</h3>
+
         <div id="product-listing">
+            <!-- Product 1 -->
             <div class="product">
                 <h2>Item 1: Television</h2>
-                <p>Description: An element tv with an Amazon HDMI. </p>
-                <img src="/images/tv.jpeg" alt="{{ product.name }}" class="product-image">
-                <p id="current-bid">Current Bid: $<span>0</span></p>
+                <p>Description: An element tv with an Amazon HDMI.</p>
+                <img src="/images/tv.jpeg" alt="Television" class="product-image">
+                <p id="current-bid">Current Bid: <span>$0</span></p>
+                
                 <div id="timer">
                     <span id="countdown"></span>
                 </div>
-                <input type="number" id="bid-amount" placeholder="Enter your bid">
-                <button onclick="placeBid()">Place Bid</button>
+                
+                <!-- Bid Form with Name Input -->
+                <form method="POST" action="/place-bid" id="bid-form-tv">
+                    <input type="text" name="user_name" placeholder="Enter your name" required>
+                    <input type="number" name="bid_amount" id="bid-amount-tv" placeholder="Enter your bid" min="1" required>
+                    <button type="submit" onclick="placeBid('tv')">Place Bid</button>
+                </form>
+
+                <!-- Display Bid History -->
+                <h3>Bid History</h3>
+                <ul id="bid-history-tv">
+                    <!-- Example Bid History -->
+                    <li>Juan: $500</li>
+                    <li>Ana: $450</li>
+                </ul>
             </div>
-           <div id="product-listing">
+
+            <!-- Product 2 -->
             <div class="product">
-                <h2>Item 1: Ipad</h2>
-                <p>Description: An Apple Ipad. </p>
-                <p id="current-bid">Current Bid: $<span>1000</span></p>
+                <h2>Item 2: iPad</h2>
+                <p>Description: An Apple iPad.</p>
+                <img src="/images/ipad.jpeg" alt="iPad" class="product-image">
+                <p id="current-bid">Current Bid: <span>$1000</span></p>
+                
                 <div id="timer">
                     <span id="countdown"></span>
                 </div>
-                <input type="number" id="bid-amount" placeholder="Enter your bid">
-                <button onclick="placeBid()">Place Bid</button>
+
+                <!-- Bid Form with Name Input -->
+                <form method="POST" action="/place-bid" id="bid-form-ipad">
+                    <input type="text" name="user_name" placeholder="Enter your name" required>
+                    <input type="number" name="bid_amount" id="bid-amount-ipad" placeholder="Enter your bid" min="1001" required>
+                    <button type="submit" onclick="placeBid('ipad')">Place Bid</button>
+                </form>
+
+                <!-- Display Bid History -->
+                <h3>Bid History</h3>
+                <ul id="bid-history-ipad">
+                    <!-- Example Bid History -->
+                    <li>Maria: $1200</li>
+                    <li>Pedro: $1100</li>
+                </ul>
             </div>
         </div>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
