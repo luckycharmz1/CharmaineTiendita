@@ -21,14 +21,36 @@ function startCountdown() {
 startCountdown();
 
 // Place bid functionality
-function placeBid() {
+function placeBid(item) {
     let currentBid = parseInt(document.getElementById('current-bid').getElementsByTagName('span')[0].innerText);
     let bidAmount = parseInt(document.getElementById('bid-amount').value);
+    let userName = document.querySelector('input[name="user_name"]').value;
 
-    if (bidAmount > currentBid) {
-        alert("Bid placed successfully!");
+    if (bidAmount > currentBid && userName !== '') {
+        // Update the bid on the page
         document.getElementById('current-bid').getElementsByTagName('span')[0].innerText = bidAmount;
-    } else {
+
+        // Send the bid information using EmailJS
+        const templateParams = {
+            user_name: userName,
+            bid_amount: bidAmount,
+            item_name: item
+        };
+
+        // Replace with your EmailJS service details
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+            .then((response) => {
+                console.log('Email sent successfully', response);
+                // Redirect to the confirmation page with the bid details
+                window.location.href = `confirmation.html?item=${item}&name=${userName}&bid=${bidAmount}`;
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+                alert("Error sending your bid. Please try again.");
+            });
+    } else if (bidAmount <= currentBid) {
         alert("Your bid must be higher than the current bid.");
+    } else if (userName === '') {
+        alert("Please enter your name before bidding.");
     }
 }
