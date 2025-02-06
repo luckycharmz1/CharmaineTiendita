@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charmaine's Tiendita</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init("YOUR_USER_ID");  // Replace with your EmailJS user ID
+    </script>
 </head>
 <body>
     <div id="auction-container">
@@ -18,27 +22,25 @@
             <!-- Product 1 -->
             <div class="product">
                 <h2>Item 1: Television</h2>
-                <p>Description: An element tv with an Amazon HDMI.</p>
+                <p>Description: An element TV with an Amazon HDMI.</p>
                 <img src="/images/tv.jpeg" alt="Television" class="product-image">
-                <p id="current-bid">Current Bid: <span>$0</span></p>
+                <p id="current-bid-tv">Current Bid: <span>$0</span></p>
                 
-                <div id="timer">
-                    <span id="countdown"></span>
+                <div id="timer-tv">
+                    <span id="countdown-tv"></span>
                 </div>
                 
                 <!-- Bid Form with Name Input -->
-                <form method="POST" action="/place-bid" id="bid-form-tv">
+                <form id="bid-form-tv" onsubmit="event.preventDefault(); placeBid('tv')">
                     <input type="text" name="user_name" placeholder="Enter your name" required>
                     <input type="number" name="bid_amount" id="bid-amount-tv" placeholder="Enter your bid" min="1" required>
-                    <button type="submit" onclick="placeBid('tv')">Place Bid</button>
+                    <button type="submit">Place Bid</button>
                 </form>
 
                 <!-- Display Bid History -->
                 <h3>Bid History</h3>
                 <ul id="bid-history-tv">
                     <!-- Example Bid History -->
-                    <li>Juan: $500</li>
-                    <li>Ana: $450</li>
                 </ul>
             </div>
 
@@ -47,25 +49,24 @@
                 <h2>Item 2: iPad</h2>
                 <p>Description: An Apple iPad.</p>
                 <img src="/images/ipad.jpeg" alt="iPad" class="product-image">
-                <p id="current-bid">Current Bid: <span>$1000</span></p>
+                <p id="current-bid-ipad">Current Bid: <span>$1000</span></p>
                 
-                <div id="timer">
-                    <span id="countdown"></span>
+                <div id="timer-ipad">
+                    <span id="countdown-ipad"></span>
                 </div>
 
                 <!-- Bid Form with Name Input -->
-                <form method="POST" action="/place-bid" id="bid-form-ipad">
+                <form id="bid-form-ipad" onsubmit="event.preventDefault(); placeBid('ipad')">
                     <input type="text" name="user_name" placeholder="Enter your name" required>
                     <input type="number" name="bid_amount" id="bid-amount-ipad" placeholder="Enter your bid" min="1001" required>
-                    <button type="submit" onclick="placeBid('ipad')">Place Bid</button>
+                    <button type="submit">Place Bid</button>
                 </form>
 
                 <!-- Display Bid History -->
                 <h3>Bid History</h3>
                 <ul id="bid-history-ipad">
                     <!-- Example Bid History -->
-                    <li>Maria: $1200</li>
-                    <li>Pedro: $1100</li>
+                    <li>Ruth: $1000</li>
                 </ul>
             </div>
         </div>
