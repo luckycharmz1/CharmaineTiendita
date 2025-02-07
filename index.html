@@ -69,11 +69,11 @@
                 </ul>
             </div>
 
-             <!-- Product 3 -->
-             <div class="product" id="product-tv">
+            <!-- Product 3 -->
+            <div class="product" id="product-heater">
                 <h2>Item 3: Small Heater</h2>
                 <p>Description: A small heater.</p>
-                <img src="/images/heater.jpeg" alt="Television" class="product-image">
+                <img src="/images/heater.jpeg" alt="Heater" class="product-image">
                 <p id="current-bid-heater">Current Bid: <span>$0</span></p>
                 
                 <div id="timer-heater">
@@ -94,15 +94,15 @@
                 </ul>
             </div>
 
-             <!-- Product 4 -->
-             <div class="product" id="product-tv">
-                <h2>Item 1: Heated Blanket</h2>
+            <!-- Product 4 -->
+            <div class="product" id="product-blanket">
+                <h2>Item 4: Heated Blanket</h2>
                 <p>Description: Gray heated blanket you can plug into wall outlet. Has different modes of heat.</p>
                 <img src="/images/heated-blanket.jpeg" alt="Heated Blanket" class="product-image">
-                <p id="current-bid-tv">Current Bid: <span>$0</span></p>
+                <p id="current-bid-blanket">Current Bid: <span>$0</span></p>
                 
                 <div id="timer-blanket">
-                    <span id="countdown-tv"></span>
+                    <span id="countdown-blanket"></span>
                 </div>
                 
                 <!-- Bid Form with Name Input -->
@@ -114,112 +114,91 @@
 
                 <!-- Display Bid History -->
                 <h3>Bid History</h3>
-                <ul id="bid-history-tv">
+                <ul id="bid-history-blanket">
                     <!-- Example Bid History -->
                 </ul>
             </div>
-
         </div>
     </div>
 
-    <script>
-        const { time } = require("console");
-
-        // Countdown Timer for both items (Modified for specific end times)
-        let timeLeftTv = 60; // 60 seconds for demo, adjust as needed for fallback
-        let timeLeftIpad = 60;
-
-        let countdownDisplayTv = document.getElementById("countdown-tv");
-        let countdownDisplayIpad = document.getElementById("countdown-ipad");
-
-        // Set the end date for TV auction to be February 14th, 2025, 7:00 PM
-        const endDateTv = new Date("February 14, 2025 19:00:00");  // TV auction ends on February 14th at 7:00 PM
-
-        function startCountdown() {
-            // Countdown for the TV Auction (Set to specific end date)
-            let countdownIntervalTv = setInterval(function () {
-                const now = new Date();
-                const timeLeftTv = endDateTv - now;  // Calculate remaining time
-
-                if (timeLeftTv <= 0) {
-                    clearInterval(countdownIntervalTv);
-                    countdownDisplayTv.innerHTML = "Auction Ended!";
-                    alert("Auction ended for Television!");
-                } else {
-                    const minutes = Math.floor((timeLeftTv % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((timeLeftTv % (1000 * 60)) / 1000);
-                    countdownDisplayTv.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-                }
-            }, 1000);
-
-            // Countdown for the iPad Auction (fallback logic, adjust as necessary)
-            let countdownIntervalIpad = setInterval(function () {
-                let minutes = Math.floor(timeLeftIpad / 60);
-                let seconds = timeLeftIpad % 60;
-
-                countdownDisplayIpad.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-                if (timeLeftIpad <= 0) {
-                    clearInterval(countdownIntervalIpad);
-                    alert("Auction ended for iPad!");
-                }
-
-                timeLeftIpad--;
-            }, 1000);
-        }
-
-        startCountdown();
-
-        // Place bid functionality for each item
-        function placeBid(item) {
-            let currentBidElement = document.getElementById(`current-bid-${item}`);
-            let currentBid = parseInt(currentBidElement.getElementsByTagName('span')[0].innerText);
-            let bidAmount = parseInt(document.getElementById(`bid-amount-${item}`).value);
-            let userName = document.querySelector(`#bid-form-${item} input[name="user_name"]`).value;
-
-            if (bidAmount > currentBid && userName !== '') {
-                // Update the bid on the page
-                currentBidElement.getElementsByTagName('span')[0].innerText = bidAmount;
-
-                // Send the bid information using the backend (adjust server-side for this action)
-                const templateParams = {
-                    user_name: userName,
-                    bid_amount: bidAmount,
-                    item_name: item
-                };
-
-                // Assuming you're handling sending bid info to the server using fetch or XMLHttpRequest
-                fetch('/submit-bid', {
-                    method: 'POST',
-                    body: JSON.stringify(templateParams),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Bid placed successfully', data);
-                    alert('Bid placed successfully!');
-                })
-                .catch(error => {
-                    console.error('Error placing bid:', error);
-                    alert("Error placing your bid. Please try again.");
-                });
-            } else if (bidAmount <= currentBid) {
-                alert("Your bid must be higher than the current bid.");
-            } else if (userName === '') {
-                alert("Please enter your name before bidding.");
-            }
-        }
-    </script>
-
-     <!-- Footer with Contact Me and About Me Buttons -->
-     <footer>
+    <footer>
         <div class="footer-content">
-            <button class="footer-button" onclick="window.location.href='#'">Contact Me</button>
-            <button class="footer-button" onclick="window.location.href='#'">About Me</button>
+            <!-- Contact Me Button -->
+            <button class="footer-button" id="contact-btn">Contact Me</button>
+
+            <!-- About Me Button (Link to new website) -->
+            <a href="https://luckycharmz1.github.io/Charmaine/" target="_blank">
+                <button class="footer-button">About Me</button>
+            </a>
         </div>
     </footer>
 
+    <!-- Contact Form Modal -->
+    <div id="contact-form-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Your Name">
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Your Email">
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required placeholder="Enter your message here"></textarea>
+
+                <button type="submit" id="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="auction.js"></script> <!-- Auction related JS -->
+    <script src="script.js"></script>  <!-- Contact form modal and general functionality -->
+
+    <script>
+        // Contact Modal JS
+        const contactBtn = document.getElementById("contact-btn");
+        const contactModal = document.getElementById("contact-form-modal");
+        const closeBtn = document.getElementById("close-btn");
+
+        contactBtn.addEventListener("click", () => {
+            contactModal.style.display = "block"; // Show modal on button click
+        });
+
+        closeBtn.addEventListener("click", () => {
+            contactModal.style.display = "none"; // Close modal when 'X' is clicked
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get("name"),
+                email: formData.get("email"),
+                message: formData.get("message")
+            };
+
+            fetch('/send-contact', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(responseData => {
+                alert("Your message has been sent!");
+                contactModal.style.display = "none"; // Close modal after submission
+            })
+            .catch(error => {
+                console.error("Error sending message:", error);
+                alert("There was an error sending your message. Please try again.");
+            });
+        });
+    </script>
 </body>
 </html>
