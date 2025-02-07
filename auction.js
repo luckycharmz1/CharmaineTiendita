@@ -21,7 +21,7 @@ function placeBid(item) {
             item_name: item
         };
 
-        // Assuming you're handling sending bid info to the server using fetch
+        // Send bid to server using fetch
         fetch('/submit-bid', {
             method: 'POST',
             body: JSON.stringify(templateParams),
@@ -30,7 +30,9 @@ function placeBid(item) {
             }
         })
         .then(response => {
-            console.log('Bid placed successfully');
+            if (!response.ok) {
+                throw new Error('Failed to place bid');
+            }
             return response.json();
         })
         .then(data => {
