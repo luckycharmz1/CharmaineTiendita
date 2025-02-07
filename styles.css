@@ -146,3 +146,37 @@ ul li {
     font-size: 14px;
     color: #333;
 }
+
+/* Make sure the images scale responsively */
+.product-image {
+    width: 100%; /* Ensures images take up the full width of their container */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 500px; /* Optional: Set a max width if you want to limit the size */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .product {
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .product-image {
+        max-width: 100%; /* Ensure images are no wider than the screen on mobile */
+        height: auto;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em;
+    }
+
+    #bid-form-tv, #bid-form-ipad {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #countdown-tv, #countdown-ipad {
+        font-size: 1.5em;
+    }
+}
