@@ -14,7 +14,7 @@
             <h2>Welcome to my store!</h2>
         </header>
 
-        <h3>Thank you for visiting my website. I coded it from scratch. All bids are placed in Peso format. Have fun!<br>
+        <h3>Thank you for visiting my website. I coded it from scratch. All bids are placed in Peso format. Have fun! And don't forget to come back. I will try to update the website daily.<br>
             Gracias por visitar mi sitio web. Lo codifiqué desde cero. Todas las ofertas se realizan en formato Peso. ¡Diviértete!</h3>
 
         <div id="product-listing">
@@ -93,6 +93,32 @@
                     <!-- Example Bid History -->
                 </ul>
             </div>
+
+             <!-- Product 4 -->
+             <div class="product" id="product-tv">
+                <h2>Item 1: Heated Blanket</h2>
+                <p>Description: Gray heated blanket you can plug into wall outlet. Has different modes of heat.</p>
+                <img src="/images/" alt="Heated Blanket" class="product-image">
+                <p id="current-bid-tv">Current Bid: <span>$0</span></p>
+                
+                <div id="timer-blanket">
+                    <span id="countdown-tv"></span>
+                </div>
+                
+                <!-- Bid Form with Name Input -->
+                <form id="bid-form-blanket" onsubmit="event.preventDefault(); placeBid('blanket')">
+                    <input type="text" name="user_name" placeholder="Enter your name" required>
+                    <input type="number" name="bid_amount" id="bid-amount-blanket" placeholder="Enter your bid" min="1" required>
+                    <button type="submit">Place Bid</button>
+                </form>
+
+                <!-- Display Bid History -->
+                <h3>Bid History</h3>
+                <ul id="bid-history-tv">
+                    <!-- Example Bid History -->
+                </ul>
+            </div>
+
         </div>
     </div>
 
