@@ -1,3 +1,5 @@
+const { time } = require("console");
+
 // Countdown Timer for both items
 let timeLeftTv = 60; // 60 seconds for demo, adjust as needed
 let timeLeftIpad = 60;
@@ -7,6 +9,7 @@ let countdownDisplayIpad = document.getElementById("countdown-ipad");
 
 function startCountdown() {
     let countdownIntervalTv = setInterval(function () {
+        let days = Math.floor(timeLeftTv / 7)
         let minutes = Math.floor(timeLeftTv / 60);
         let seconds = timeLeftTv % 60;
 

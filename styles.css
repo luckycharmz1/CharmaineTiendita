@@ -1,6 +1,48 @@
 /* Charmaine's Tiendita CSS */
 /* Styling for all pages */
 
+/* Header styling */
+header {
+    text-align: center;
+    background: linear-gradient(135deg, #8A2BE2, #BA55D3); /* Cool gradient background */
+    color: white; /* Make text color white */
+    padding: 40px 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-bottom: 20px;
+}
+
+/* Store Name Styling */
+header h1 {
+    font-size: 4em; /* Large font size */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft shadow for text */
+    color: white; /* Ensure store name is white */
+}
+
+/* Subtitle Styling */
+header h2 {
+    font-size: 1.8em; /* Slightly smaller font */
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    opacity: 0.8;
+    color: white; /* Ensure subtitle is white */
+}
+
+/* Make the background of the page a bit softer */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* General styling */
 body {
     font-family: Arial, sans-serif;
