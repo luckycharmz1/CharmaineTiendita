@@ -185,7 +185,7 @@ ul li {
 header {
     text-align: center;
     background: linear-gradient(135deg, #8A2BE2, #BA55D3); /* Cool gradient background */
-    color: white;
+    color: white; /* Make text color white */
     padding: 40px 20px;
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
@@ -200,6 +200,7 @@ header h1 {
     letter-spacing: 2px;
     margin: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft shadow for text */
+    color: white; /* Ensure store name is white */
 }
 
 /* Subtitle Styling */
@@ -210,6 +211,7 @@ header h2 {
     letter-spacing: 1px;
     font-weight: normal;
     opacity: 0.8;
+    color: white; /* Ensure subtitle is white */
 }
 
 /* Make the background of the page a bit softer */
