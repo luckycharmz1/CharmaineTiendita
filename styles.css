@@ -180,3 +180,21 @@ ul li {
         font-size: 1.5em;
     }
 }
+
+/* Header styling */
+header {
+    text-align: center;
+    background-color: #8A2BE2; /* Purple background */
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
