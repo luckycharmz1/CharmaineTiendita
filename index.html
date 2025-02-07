@@ -68,6 +68,31 @@
                     <li>Ruth: $1000</li>
                 </ul>
             </div>
+
+             <!-- Product 3 -->
+             <div class="product" id="product-tv">
+                <h2>Item 3: Small Heater</h2>
+                <p>Description: A small heater.</p>
+                <img src="/images/" alt="Television" class="product-image">
+                <p id="current-bid-heater">Current Bid: <span>$0</span></p>
+                
+                <div id="timer-heater">
+                    <span id="countdown-heater"></span>
+                </div>
+                
+                <!-- Bid Form with Name Input -->
+                <form id="bid-form-heater" onsubmit="event.preventDefault(); placeBid('heater')">
+                    <input type="text" name="user_name" placeholder="Enter your name" required>
+                    <input type="number" name="bid_amount" id="bid-amount-heater" placeholder="Enter your bid" min="1" required>
+                    <button type="submit">Place Bid</button>
+                </form>
+
+                <!-- Display Bid History -->
+                <h3>Bid History</h3>
+                <ul id="bid-history-heater">
+                    <!-- Example Bid History -->
+                </ul>
+            </div>
         </div>
     </div>
 
