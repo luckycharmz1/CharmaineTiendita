@@ -3,7 +3,7 @@ let targetDate = new Date('February 14, 2025 20:00:00').getTime();
 
 // Variables to hold the remaining time for each item
 let timeLeftTv = targetDate - new Date().getTime(); 
-let timeLeftIpad = 60 * 30 * 1000; // iPad countdown (30 minutes) in milliseconds
+let timeLeftIpad = 60 * 1 * 1000; // iPad countdown (1 minute) in milliseconds
 let timeLeftHeater = targetDate - new Date().getTime();
 let timeLeftBlanket = targetDate - new Date().getTime();
 
@@ -17,10 +17,13 @@ let countdownDisplayBlanket = document.getElementById("countdown-blanket");
 function startCountdown() {
     // Countdown for TV (until February 14, 2025 at 8:00 PM)
     let countdownIntervalTv = setInterval(function () {
-        let minutes = Math.floor(timeLeftTv / 60000); // Convert ms to minutes
-        let seconds = Math.floor((timeLeftTv % 60000) / 1000); // Get remaining seconds
-        countdownDisplayTv.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        
+        let days = Math.floor(timeLeftTv / (1000 * 60 * 60 * 24)); // Calculate days
+        let hours = Math.floor((timeLeftTv % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Calculate hours
+        let minutes = Math.floor((timeLeftTv % (1000 * 60 * 60)) / (1000 * 60)); // Calculate minutes
+        let seconds = Math.floor((timeLeftTv % (1000 * 60)) / 1000); // Calculate seconds
+
+        countdownDisplayTv.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
         if (timeLeftTv <= 0) {
             clearInterval(countdownIntervalTv);
             countdownDisplayTv.innerHTML = "Auction Ended!";
@@ -30,12 +33,12 @@ function startCountdown() {
         timeLeftTv -= 1000; // Decrease by 1 second
     }, 1000);
 
-    // Countdown for iPad (fixed 30 minutes countdown)
+    // Countdown for iPad (fixed 1 minute countdown)
     let countdownIntervalIpad = setInterval(function () {
         let minutes = Math.floor(timeLeftIpad / 60000); // Convert ms to minutes
         let seconds = Math.floor((timeLeftIpad % 60000) / 1000); // Get remaining seconds
-        countdownDisplayIpad.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        
+        countdownDisplayIpad.innerHTML = `${minutes}m ${seconds < 10 ? '0' : ''}${seconds}s`;
+
         if (timeLeftIpad <= 0) {
             clearInterval(countdownIntervalIpad);
             countdownDisplayIpad.innerHTML = "Auction Ended!";
@@ -47,10 +50,13 @@ function startCountdown() {
 
     // Countdown for Heater (until February 14, 2025 at 8:00 PM)
     let countdownIntervalHeater = setInterval(function () {
-        let minutes = Math.floor(timeLeftHeater / 60000); // Convert ms to minutes
-        let seconds = Math.floor((timeLeftHeater % 60000) / 1000); // Get remaining seconds
-        countdownDisplayHeater.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        
+        let days = Math.floor(timeLeftHeater / (1000 * 60 * 60 * 24)); // Calculate days
+        let hours = Math.floor((timeLeftHeater % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Calculate hours
+        let minutes = Math.floor((timeLeftHeater % (1000 * 60 * 60)) / (1000 * 60)); // Calculate minutes
+        let seconds = Math.floor((timeLeftHeater % (1000 * 60)) / 1000); // Calculate seconds
+
+        countdownDisplayHeater.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
         if (timeLeftHeater <= 0) {
             clearInterval(countdownIntervalHeater);
             countdownDisplayHeater.innerHTML = "Auction Ended!";
@@ -62,10 +68,13 @@ function startCountdown() {
 
     // Countdown for Blanket (until February 14, 2025 at 8:00 PM)
     let countdownIntervalBlanket = setInterval(function () {
-        let minutes = Math.floor(timeLeftBlanket / 60000); // Convert ms to minutes
-        let seconds = Math.floor((timeLeftBlanket % 60000) / 1000); // Get remaining seconds
-        countdownDisplayBlanket.innerHTML = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-        
+        let days = Math.floor(timeLeftBlanket / (1000 * 60 * 60 * 24)); // Calculate days
+        let hours = Math.floor((timeLeftBlanket % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Calculate hours
+        let minutes = Math.floor((timeLeftBlanket % (1000 * 60 * 60)) / (1000 * 60)); // Calculate minutes
+        let seconds = Math.floor((timeLeftBlanket % (1000 * 60)) / 1000); // Calculate seconds
+
+        countdownDisplayBlanket.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
         if (timeLeftBlanket <= 0) {
             clearInterval(countdownIntervalBlanket);
             countdownDisplayBlanket.innerHTML = "Auction Ended!";
