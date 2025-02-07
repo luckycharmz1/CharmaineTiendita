@@ -88,37 +88,6 @@ h3 {
     }
 }
 
-/* Responsive design for mobile screens */
-@media (max-width: 480px) {
-    #auction-container {
-        padding: 5px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    .product h2 {
-        font-size: 16px;
-    }
-
-    .product {
-        padding: 10px;
-    }
-
-    input[type="number"], input[type="text"], button {
-        font-size: 14px;
-    }
-
-    #timer {
-        font-size: 14px;
-    }
-}
-
 /* Bid button style */
 button {
     background-color: #6a2c9b;
@@ -145,79 +114,4 @@ ul li {
     margin: 5px 0;
     font-size: 14px;
     color: #333;
-}
-
-/* Make sure the images scale responsively */
-.product-image {
-    width: 100%; /* Ensures images take up the full width of their container */
-    height: auto; /* Maintains aspect ratio */
-    max-width: 500px; /* Optional: Set a max width if you want to limit the size */
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 600px) {
-    .product {
-        margin: 10px;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .product-image {
-        max-width: 100%; /* Ensure images are no wider than the screen on mobile */
-        height: auto;
-    }
-
-    h1, h2, h3 {
-        font-size: 1.5em;
-    }
-
-    #bid-form-tv, #bid-form-ipad {
-        width: 100%;
-        padding: 10px;
-    }
-
-    #countdown-tv, #countdown-ipad {
-        font-size: 1.5em;
-    }
-}
-
-/* Header styling */
-header {
-    text-align: center;
-    background: linear-gradient(135deg, #8A2BE2, #BA55D3); /* Cool gradient background */
-    color: white; /* Make text color white */
-    padding: 40px 20px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    margin-bottom: 20px;
-}
-
-/* Store Name Styling */
-header h1 {
-    font-size: 4em; /* Large font size */
-    font-family: 'Roboto', sans-serif; /* Modern font */
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin: 0;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft shadow for text */
-    color: white; /* Ensure store name is white */
-}
-
-/* Subtitle Styling */
-header h2 {
-    font-size: 1.8em; /* Slightly smaller font */
-    font-family: 'Arial', sans-serif;
-    margin-top: 10px;
-    letter-spacing: 1px;
-    font-weight: normal;
-    opacity: 0.8;
-    color: white; /* Ensure subtitle is white */
-}
-
-/* Make the background of the page a bit softer */
-body {
-    background-color: #f9f9f9;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
 }
